@@ -1,0 +1,47 @@
+<h1>Census Records</h1>
+<h2>Add New Census</h2>
+
+<div class="census-form">
+  <h3>Year</h3>
+  <input [(ngModel)]="newRecord.year" placeholder="Year" type="number">
+  <h3>Census Taker</h3>
+  <input [(ngModel)]="newRecord.taker" placeholder="Census Taker's Name">
+  <h3>Number of People</h3>
+  <input [(ngModel)]="newRecord.people" placeholder="Number of People" type="number">
+  <h3>Street</h3>
+  <input [(ngModel)]="newRecord.street" placeholder="Street">
+  <h3>City</h3>
+  <input [(ngModel)]="newRecord.city" placeholder="City">
+  <h3>State</h3>
+  <input [(ngModel)]="newRecord.state" placeholder="State">
+  <h3>Zip Code</h3>
+  <input [(ngModel)]="newRecord.zip" placeholder="Zip Code">
+  
+  <button (click)="addRecord()">Add Record</button>
+</div>
+
+<div class="census-list">
+  <div *ngFor="let record of censusRecords; let i = index" class="census-item">
+    <p>Year: {{record.year}}</p>
+    <p>Census Taker: {{record.taker}}</p>
+    <p>People: {{record.people}}</p>
+    <p>State: {{record.state}}</p>
+    <p>City: {{record.city}}</p>
+    <p>Zip Code:{{record.zip}}</p>
+    <button (click)="editRecord(i)">Edit</button>
+    <button (click)="deleteRecord(i)">Delete</button>
+  </div>
+</div>
+
+<div *ngIf="editingIndex !== null" class="census-form">
+  <h2>Edit Record</h2>
+  <input [(ngModel)]="editingRecord.year" placeholder="Year" type="number">
+  <input [(ngModel)]="editingRecord.taker" placeholder="Census Taker's Name">
+  <input [(ngModel)]="editingRecord.people" placeholder="Number of People" type="number">
+  <input [(ngModel)]="editingRecord.street" placeholder="Street">
+  <input [(ngModel)]="editingRecord.city" placeholder="City">
+  <input [(ngModel)]="editingRecord.state" placeholder="State">
+  <input [(ngModel)]="editingRecord.zip" placeholder="Zip Code">
+  <button (click)="updateRecord()">Update</button>
+  <button (click)="cancelEdit()">Cancel</button>
+</div>

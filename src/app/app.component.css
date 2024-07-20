@@ -1,0 +1,26 @@
+.census-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 20px 0;
+}
+
+.census-form input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+button {
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.census-list {
+  margin-top: 20px;
+}
+
+.census-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
